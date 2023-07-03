@@ -1,30 +1,30 @@
-import React from 'react'
-import Graph from '../Graph/Graph'
+import React from "react";
+import Graph from "../Graph/Graph";
 
 const Card = () => {
   return (
-    <div>
-        <h4>Heading</h4>
-        <div style={{
-            display:'flex',
-            alignItems:'center',
-            gap:'10px'
-        }}> 
-            <div>
-                <h5>3354</h5>
-                chip
-                number
-            </div>
-            <div>
-                <Graph style={{
-                    width:'100%',
-                    height:'100%'
-                }}/>
-            </div>
+    <div className="card-container" style={{
+        width:'19.75rem',
+        padding:'1.25rem',
+        backgroundColor:'white',
+        borderRadius:'10px'
+    }}>
+      <h4>Heading</h4>
+      <div className="card-body" style={{
+        display:'flex',
+        justifyContent:'space-between',
+        alignItems:'center'
+      }}>
+        <div className="card-left">
+          <h3>3,354</h3>
+          <div>chip number</div>
         </div>
-        {/* <Graph/> */}
+        <div className="card-graph">
+          <Graph />
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

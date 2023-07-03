@@ -41,8 +41,8 @@ const Graph = () => {
   ];
 
   return (
-    <ResponsiveContainer width="100%" aspect={3}>
-      <AreaChart data={data}>
+    <ResponsiveContainer width={170} aspect={1}>
+      <AreaChart  data={data}>
         <defs>
         <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
       <stop offset="5%" stopColor="green" stopOpacity={0.8}/>
@@ -56,7 +56,7 @@ const Graph = () => {
        
           dataKey="value"
           stroke=""
-          fill=""
+          
           fillOpacity={1}
         fill="url(#colorUv)"
         />
