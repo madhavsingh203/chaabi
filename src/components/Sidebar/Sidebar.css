@@ -2,17 +2,18 @@
     width: 100%;
     max-width: 22rem;
     height: 100vh;
-    background-color: white;
+    background-color: rgb(250, 250, 250);
     padding: 2rem;
     display: block;
    position: relative;
-   bottom: 200px;
+   bottom: 150px;
 }
 
 .sidebar-top {
     width: 12.5rem;
     border-bottom: 1px solid black;
-
+    width: 100%;
+   padding-bottom: 3rem;
 }
 
 .sidebar-bottom ul{

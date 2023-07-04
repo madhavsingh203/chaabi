@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 import BarGraph from "../BarChart/BarChart";
 import PieGraphCard from "../PieGraph/PieGraphCard";
 import ActivityCard from "../ActivityCard/ActivityCard";
-import { barData, barDataSevenDays } from "../../mockData";
+import { barCardData, barData, barDataSevenDays } from "../../mockData";
 import DonutCard from "../Donut/DonutCard";
 
 const Dashboard = () => {
@@ -17,18 +17,14 @@ const Dashboard = () => {
         }}
       >
         <Grid container mt={2} p={2} className="top-grid">
-          <Grid item>
-            <Card />
+          
+             {barCardData.map((item,index)=>
+             <Grid item>
+          <Card key={index} title={item.title} value={item.value} number={item.number} chipColor={item.chipColor}/>
           </Grid>
-          <Grid item>
-            <Card />
-          </Grid>
-          <Grid item>
-            <Card />
-          </Grid>
-          <Grid item>
-            <Card />
-          </Grid>
+          )}
+          
+         
           <Grid item>
             <PieGraphCard />
           </Grid>
@@ -59,7 +55,7 @@ const Dashboard = () => {
                 vertical={false}
                 horizontal={false}
                 barRadius={10}
-                domain={[0, 400]}
+                domain={[0,400]}
               />
             </Grid>
           </Grid>
@@ -96,7 +92,7 @@ const Dashboard = () => {
                 vertical={false}
                 horizontal={true}
                 barRadius={1}
-                domain={[0, 160]}
+                domain={[0,160]}
               />
             </Grid>
           </Grid>

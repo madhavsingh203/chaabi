@@ -1,7 +1,8 @@
 import React from "react";
 import Graph from "../Graph/Graph";
+import Chip from "../Chip/Chip";
 
-const Card = () => {
+const Card = ({title,value,number,chipColor}) => {
   return (
     <div className="card-container" style={{
         width:'19rem',
@@ -9,18 +10,21 @@ const Card = () => {
         backgroundColor:'white',
         borderRadius:'10px'
     }}>
-      <h4>Heading</h4>
+      <h4>{title}</h4>
       <div className="card-body" style={{
         display:'flex',
         justifyContent:'space-between',
         alignItems:'center'
       }}>
         <div className="card-left">
-          <h3>3,354</h3>
-          <div>chip number</div>
+          <h3>{value}</h3>
+          <div>
+            <Chip number={number}/>
+             <p>{number}</p>
+             </div>
         </div>
         <div className="card-graph">
-          <Graph />
+          <Graph chipColor={chipColor}/>
         </div>
       </div>
     </div>

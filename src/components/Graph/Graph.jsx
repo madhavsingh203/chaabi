@@ -8,7 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-const Graph = () => {
+const Graph = ({chipColor}) => {
   const data = [
     {
       name: "M",
@@ -45,8 +45,8 @@ const Graph = () => {
       <AreaChart  data={data}>
         <defs>
         <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="5%" stopColor="green" stopOpacity={0.8}/>
-      <stop offset="98%" stopColor="green" stopOpacity={0.08}/>
+      <stop offset="5%" stopColor={chipColor} stopOpacity={0.8}/>
+      <stop offset="98%" stopColor={chipColor} stopOpacity={0.08}/>
     </linearGradient>
         </defs>
         <XAxis dataKey="name" axisLine={false} tickLine={false} />
