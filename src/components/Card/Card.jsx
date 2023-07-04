@@ -18,7 +18,11 @@ const Card = ({title,value,number,chipColor}) => {
       }}>
         <div className="card-left">
           <h3>{value}</h3>
-          <div>
+          <div style={{
+            display:'flex',
+            alignItems:'center',
+            gap:'10px'
+          }}>
             <Chip number={number}/>
              <p>{number}</p>
              </div>

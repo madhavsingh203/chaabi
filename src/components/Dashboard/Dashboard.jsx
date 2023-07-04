@@ -19,8 +19,8 @@ const Dashboard = () => {
         <Grid container mt={2} p={2} className="top-grid">
           
              {barCardData.map((item,index)=>
-             <Grid item>
-          <Card key={index} title={item.title} value={item.value} number={item.number} chipColor={item.chipColor}/>
+             <Grid key={index} item>
+          <Card  title={item.title} value={item.value} number={item.number} chipColor={item.chipColor}/>
           </Grid>
           )}
           

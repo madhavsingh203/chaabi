@@ -60,8 +60,8 @@ const Sider = () => {
       </div>
       <div className="sidebar-bottom">
         <ul>
-          {sidebarMenu.map((item) => (
-            <li>
+          {sidebarMenu.map((item,index) => (
+            <li key={index}>
               <img src={item.icon} />
               <p>{item.title}</p>
             </li>
