@@ -4,7 +4,7 @@ import Graph from "../Graph/Graph";
 const Card = () => {
   return (
     <div className="card-container" style={{
-        width:'19.75rem',
+        width:'19rem',
         padding:'1.25rem',
         backgroundColor:'white',
         borderRadius:'10px'

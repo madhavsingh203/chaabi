@@ -2,8 +2,11 @@ import React from "react";
 import { Grid } from "@mui/material";
 import "./Dashboard.css";
 import Card from "../Card/Card";
-import { ResponsiveContainer } from "recharts";
 import BarGraph from "../BarChart/BarChart";
+import PieGraphCard from "../PieGraph/PieGraphCard";
+import ActivityCard from "../ActivityCard/ActivityCard";
+import { barData, barDataSevenDays } from "../../mockData";
+import DonutCard from "../Donut/DonutCard";
 
 const Dashboard = () => {
   return (
@@ -14,10 +17,6 @@ const Dashboard = () => {
         }}
       >
         <Grid container mt={2} p={2} className="top-grid">
-          {/* <Grid className="top-grid-item" item xs={12} md={6} lg={3}><Card/></Grid>
-        <Grid className="top-grid-item" item xs={12} md={6}  lg={3}><Card/></Grid>
-        <Grid className="top-grid-item" item xs={12} md={6}  lg={2}><Card/></Grid> 
-        <Grid className="top-grid-item" item xs={12} md={6} lg={3}><Card /></Grid> */}
           <Grid item>
             <Card />
           </Grid>
@@ -29,6 +28,9 @@ const Dashboard = () => {
           </Grid>
           <Grid item>
             <Card />
+          </Grid>
+          <Grid item>
+            <PieGraphCard />
           </Grid>
           <Grid
             container
@@ -38,7 +40,6 @@ const Dashboard = () => {
             }}
             className="middle-grid-container"
           >
-            
             <Grid item className="middle-grid-graph">
               <div
                 className="middle-grid-top "
@@ -51,9 +52,53 @@ const Dashboard = () => {
                 <p>Last 14 days active workers in training</p>
                 <p>Last 14 days</p>
               </div>
-              <BarGraph width="100%" />
-            </Grid>
 
+              <BarGraph
+                width="100%"
+                data={barData}
+                vertical={false}
+                horizontal={false}
+                barRadius={10}
+                domain={[0, 400]}
+              />
+            </Grid>
+          </Grid>
+          <Grid item className="activity-card-container">
+            <ActivityCard />
+          </Grid>
+          <Grid item className="donut-container">
+            <DonutCard />
+          </Grid>
+          <Grid
+            container
+            style={{
+              backgroundColor: "white",
+              width: "100%",
+            }}
+            className="bottom-grid-container"
+          >
+            <Grid item className="bottom-grid-graph">
+              <div
+                className="bottom-grid-top "
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginBottom: "3rem",
+                }}
+              >
+                <p>Daily Traning Completions</p>
+                <p>Last 7 days</p>
+              </div>
+
+              <BarGraph
+                width="100%"
+                data={barDataSevenDays}
+                vertical={false}
+                horizontal={true}
+                barRadius={1}
+                domain={[0, 160]}
+              />
+            </Grid>
           </Grid>
         </Grid>
       </div>
