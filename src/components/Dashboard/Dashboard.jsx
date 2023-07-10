@@ -17,46 +17,51 @@ const Dashboard = () => {
         }}
       >
         <Grid container mt={2} p={2} className="top-grid">
-          
-             {barCardData.map((item,index)=>
-             <Grid key={index} item>
-          <Card  title={item.title} value={item.value} number={item.number} chipColor={item.chipColor}/>
-          </Grid>
-          )}
-          
-         
-          <Grid item>
-            <PieGraphCard />
-          </Grid>
-          <Grid
-            container
-            style={{
-              backgroundColor: "white",
-              width: "100%",
-            }}
-            className="middle-grid-container"
-          >
-            <Grid item className="middle-grid-graph">
-              <div
-                className="middle-grid-top "
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginBottom: "3rem",
-                }}
-              >
-                <p>Last 14 days active workers in training</p>
-                <p>Last 14 days</p>
-              </div>
-
-              <BarGraph
-                width="100%"
-                data={barData}
-                vertical={false}
-                horizontal={false}
-                barRadius={10}
-                domain={[0,400]}
+          {barCardData.map((item, index) => (
+            <Grid key={index} item>
+              <Card
+                title={item.title}
+                value={item.value}
+                number={item.number}
+                chipColor={item.chipColor}
               />
+            </Grid>
+          ))}
+
+          <Grid container columnGap={3}>
+            <Grid item>
+              <PieGraphCard />
+            </Grid>
+            <Grid
+              container
+              style={{
+                backgroundColor: "white",
+              }}
+              className="middle-grid-container"
+            >
+              <Grid item className="middle-grid-graph ">
+                <div
+                  className="middle-grid-top "
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginBottom: "3rem",
+                    width: "100%",
+                  }}
+                >
+                  <p>Last 14 days active workers in training</p>
+                  <p>Last 14 days</p>
+                </div>
+
+                <BarGraph
+                  width="100%"
+                  data={barData}
+                  vertical={false}
+                  horizontal={false}
+                  barRadius={10}
+                  domain={[0, 400]}
+                />
+              </Grid>
             </Grid>
           </Grid>
           <Grid item className="activity-card-container">
@@ -92,7 +97,7 @@ const Dashboard = () => {
                 vertical={false}
                 horizontal={true}
                 barRadius={1}
-                domain={[0,160]}
+                domain={[0, 160]}
               />
             </Grid>
           </Grid>
