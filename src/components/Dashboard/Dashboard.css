@@ -76,7 +76,7 @@
   text-transform: capitalize;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 639px) {
   .middle-grid-container {
     max-width: 22rem;
   }
@@ -86,12 +86,9 @@
   .bottom-grid-container {
     width: 18rem;
     margin-left: 0;
+    margin-top: 2rem;
   }
   .bottom-grid-graph {
     width: 19rem;
   }
-}
-
-@media (max-widt: 1573px){
-    
 }
