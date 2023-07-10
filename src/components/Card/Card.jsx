@@ -11,6 +11,7 @@ const Card = ({ title, value, number, chipColor }) => {
         padding: "1.25rem",
         backgroundColor: "white",
         borderRadius: "10px",
+        boxShadow: "0px 4px 4px 0px rgba(24, 120, 242, 0.25)",
       }}
     >
       <h4>{title}</h4>
